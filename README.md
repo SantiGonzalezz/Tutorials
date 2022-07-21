@@ -8,7 +8,7 @@ The tutorial available are:
 - [Numpy](https://github.com/SantiGonzalezz/Tutorials/blob/main/Numpy.ipynb)
 - [Pandas]()
 - [Matplotlib]()
-- [SQL in Python]()
+- [SQL in Python](https://github.com/SantiGonzalezz/Tutorials/blob/main/SQL%20in%20Python.ipynb)
 
 Mostly of the tutorials have coding, principally in Python, in consequence the Jupyter Notebooks are the preferred tool.
 
