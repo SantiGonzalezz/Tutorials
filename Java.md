@@ -17,7 +17,12 @@ This is a summary of Java syntaxis.
    - [if / else if / else](#if-else-if-else)
    - [switch case](#switch-case)
      - [switch expression](#switch-expression)
-1. [while](#while-loops)
+1. [Loops](#loops)
+   - [While](#while-loops)
+   - [For](#for-loops)
+   - [Do While](#do-while)
+   - [Continue and Break](#continue-and-break)
+1. []()
 1. []()
 
 ## Print
@@ -217,9 +222,9 @@ System.out.println(a + " " + b) // Hola Mundo
 
 ## Conditional statements
 
-[Índice](#índice)
-
 ### Comparison operators
+
+[Índice](#índice)
 
 - **<** less than
 - **\>** greater than
@@ -229,6 +234,8 @@ System.out.println(a + " " + b) // Hola Mundo
 - **\>=** greater than or equal to
 
 ### Logical operators
+
+[Índice](#índice)
 
 - **&** and
 - **&&** and
@@ -244,6 +251,8 @@ If you use && and the first condition is false, it does not make the second comp
 
 ### if else if else
 
+[Índice](#índice)
+
 ```Java
 if (condition) {
     //...
@@ -255,6 +264,8 @@ if (condition) {
 ```
 
 ### switch case
+
+[Índice](#índice)
 
 The break statement helps to end the switch, and jump to the next line after the switch. The break could not be necesary, so when the case ends it compares the next cases.
 
@@ -292,6 +303,8 @@ switch(day) {
 
 #### switch Expression
 
+[Índice](#índice)
+
 **->** shorthand
 
 ```Java
@@ -306,9 +319,17 @@ String dayType  = switch(day) {
 System.out.println(dayType);
 ```
 
-## while loops
+## Loops
+
+### While loops
 
 [Índice](#índice)
+
+```Java
+while (condicion) {
+    // ...
+}
+```
 
 ```Java
 int x = 3;
@@ -319,17 +340,47 @@ while (x > 0) {
 }
 ```
 
-##
+### For loops
 
 [Índice](#índice)
 
-##
+```Java
+for (initialization; condition; increment/decrement) {
+    // ...
+}
+```
+
+```Java
+for (int x = 1; x <=5; x++) {
+    System.out.println(x);
+}
+```
+
+### Do While
 
 [Índice](#índice)
 
-##
+Similar al while normal, con la diferencia de que se ejecuta al menos una vez.
+
+```Java
+int x = 1;
+
+do {
+  System.out.println(x);
+  x++;
+} while(x < 0);
+
+// 1
+// the condiction is not true, however it is executed once
+```
+
+### Continue and Break
 
 [Índice](#índice)
+
+**break:** ends the loop and skips all the code inside the loop. _End the loop here_.
+
+**continue:** skip the reamainder code inside the loop, and retest the condition to reiterate. _Go to next iteration_.
 
 ##
 

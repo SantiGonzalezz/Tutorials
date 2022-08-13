@@ -324,7 +324,7 @@ Si no se le estabalece una condición se forma un bucle infinito
 
 ### Do While
 
-No termina hasta que la condición se cumpla
+Termina cuando deje de cumplirse la condición, es decir, se ejecuta mientras la condición sea verdadera.
 
 ```VB
 contador = 0
@@ -346,7 +346,7 @@ Loop
 
 ### Do Until
 
-No termina hasta que la condición se cumpla
+Termina cuando la condición se cumpla, es decir, se ejecuta mientras la condición sea falsa.
 
 ```VB
 contador = 0
@@ -361,7 +361,7 @@ Loop
 
 ### While
 
-No termina hasta que la condición deje de cumplirse
+Termina cuando deje de cumplirse la condición, es decir, se ejecuta mientras la condición sea verdadera.
 
 **Considerado obsoleto**
 
