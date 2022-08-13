@@ -2,8 +2,8 @@
 
 ## Índice
 
-1. [Fórmulas](#fórmulas)
-   - [Basics](#basic)
+1. [Fórmulas](#funciones-nativas)
+   - [Basics](#basics)
    - [String Functions](#string-functions)
    - [Array Functions](#array-functions)
 1. [Debug.Print](#debugprint)
@@ -24,6 +24,7 @@
    - [Do Until](#do-until)
    - [While](#while)
 1. [Funciones](#function)
+1. [Eventos](#eventos)
 
 ---
 
@@ -407,5 +408,3 @@ En el objeto ThisWorkbook seleccionamos WorkBook y seleccionamos uno en la lista
   En el objeto Hoja1 seleccionamos WorkSheet y seleccionamos uno en la lista con todos los posibles eventos.
 
 ---
-
-[Índice](#índice)
