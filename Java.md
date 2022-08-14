@@ -22,6 +22,15 @@ This is a summary of Java syntaxis.
    - [For](#for-loops)
    - [Do While](#do-while)
    - [Continue and Break](#continue-and-break)
+1. [Arrays](#arrays)
+   - [Creating arrays](#creating-arrays)
+   - [Initialize arrays](#initialize-arrays)
+1. [Array operations](#array-operations)
+   - [Length](#length)
+1. [Enhanced for loop](#enhanced-for-loop)
+1. [Multidimensional arrays](#multidimensional-arrays)
+1. []()
+1. []()
 1. []()
 1. []()
 
@@ -381,6 +390,98 @@ do {
 **break:** ends the loop and skips all the code inside the loop. _End the loop here_.
 
 **continue:** skip the reamainder code inside the loop, and retest the condition to reiterate. _Go to next iteration_.
+
+## Arrays
+
+[Índice](#índice)
+
+### Creating arrays
+
+[Índice](#índice)
+
+The arrays must have just one data type in all the positions.
+
+Declaring an array.
+
+```Java
+int[] arr;
+// or
+int arr[];
+```
+
+Define array's capacity.
+
+```Java
+int[] arr = new int[5];
+```
+
+The arrays are zero-indexed. Asign values.
+
+```Java
+arr[2] = 42;
+
+for (int x = 0; x < 5; x++) {
+  System.out.println(arr[x]);
+}
+
+// 0 0 42 0 0
+```
+
+### Initialize arrays.
+
+[Índice](#índice)
+
+If you already know what values to insert in the array, you can use an array literal. Place the values in a comma-separated list, enclosed in curly braces.
+
+```Java
+String[] myNames = {"A", "B", "C", "D"};
+System.out.println(myNames[2]); // C
+
+int[] myNums = {1, 2, 3, 4};
+System.out.println(myNums[2]); // 3
+```
+
+## Array operations
+
+[Índice](#índice)
+
+### Length
+
+```Java
+int[] intArr = new int[5];
+System.out.println(intArr.length);
+```
+
+## Enhanced for loop
+
+[Índice](#índice)
+
+Is used to traverse elements in arrays.
+
+```Java
+int[] primes = {2, 3, 5, 7};
+
+// It is readed as
+// for t in primes
+for (int t: primes) {
+  System.out.println(t);
+}
+
+// 2 3 5 7
+```
+
+## Multidimensional Arrays
+
+[Índice](#índice)
+
+Arrays can contain other arrays.
+
+```Java
+int[][] sample = {{1, 2, 3}, {4, 5, 6}};
+
+int x = sample[1][0];
+System.out.println(x); // 4
+```
 
 ##
 
