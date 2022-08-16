@@ -280,14 +280,19 @@ The break statement helps to end the switch, and jump to the next line after the
 
 ```Java
 switch (expression) {
-    case value1:
+    case value1: {
+
         // ...
         break; // optional
-    case value2:
+    }
+    case value2: {
+
         // ...
         break;
-    default: // optional
+    }
+    default: {// optional
         // ...
+    }
 }
 ```
 
