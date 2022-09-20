@@ -1,0 +1,146 @@
+/**
+ * JavaCC template file created by SF JavaCC plugin 1.5.28+ wizard for JavaCC 1.5.0+
+ */options{  static = true;}PARSER_BEGIN(exp)package grammar;
+
+public class exp{  public static void main(String args []) throws ParseException  {    exp parser = new exp(System.in);    while (true)    {      System.out.println("Reading from standard input...");      System.out.print("Enter an expression like \"1+(2+3)*4;\" :");      try      {        switch (exp.one_line())        {          case 0 :           System.out.println("OK.");          break;          case 1 :           System.out.println("Goodbye.");          break;          default :           break;        }      }      catch (Exception e)      {        System.out.println("NOK.");        System.out.println(e.getMessage());        exp.ReInit(System.in);      }      catch (Error e)      {        System.out.println("Oops.");        System.out.println(e.getMessage());        break;      }    }  }}PARSER_END(exp)SKIP :{  " "| "\r"| "\t"| "\n"}TOKEN : /* OPERATORS */{
+  < LPAREN : "(" >
+| < RPAREN: ")" >
+| < SEMICOLON: ";" >
+| < COMMA: "," >
+| < LBRACKET: "{" >
+| < RBRACKET: "}" >
+| < DOT: "." >
+| < ASSIGN: "=" >
+
+| < CLASS: "class" >
+| < EXTENDS: "extends" >
+| < INTN: "int" >
+| < DOUBLEN: "double" >
+| < STRINGN: "String" >
+| < BOOLEANN: "boolean" >
+| < SUPER: "super" >
+| < THIS: "this" >
+| < RETURN: "return" >
+| < NEW: "new" >
+
+ }TOKEN :{
+  < ID : < LETTER > (< CHARACTER >)* >
+| < INT : (< DIGIT >)+ >
+| < DOUBLE: (< DIGIT >)+ < DOT > ( < DIGIT > )+ >
+| < BOOL: ( "false" | "true" ) >| < #DIGIT : [ "0"-"9" ] >
+| < #LETTER: [ "a"-"z" ] | [ "A"-"Z" ] >
+| < #CHARACTER: ([ "a"-"z" ] | [ "A"-"Z" ] | [ "0"-"9" ] | "'" | "_") >
+}void class_definition():{}{  < CLASS > < ID > < EXTENDS > < ID > bloque()}void bloque():{}
+{	< LBRACKET > ( metodo() | expresiones() )* constructor() ( metodo() | expresiones() )* < RBRACKET > 
+}
+
+void expresiones():
+{}
+{	(	  tipado()	| expresion()
+	)  }
+
+void tipado():
+{}
+{
+  tipodato() < ID > < SEMICOLON >}
+
+void constructor():
+{}{
+  < ID > < LPAREN > ( parametros() )? < RPAREN > constbloque()
+}
+
+void parametros():
+{}
+{  tipodato() < ID > ( < COMMA > tipodato() < ID > )*
+}
+void tipodato():
+{}
+{
+  (    < STRINGN > | < INTN > | < DOUBLEN > | < BOOLEANN > | < ID >
+  )
+}
+
+void constbloque():
+{}
+{
+  < LBRACKET > superm() ( constexp() )* < RBRACKET >
+}
+
+void superm():
+{}
+{  < SUPER > < LPAREN > < RPAREN > < SEMICOLON > 
+}
+
+void constexp():
+{}
+{
+  (    asignar() | expresion()
+  )
+}
+void asignar():
+{}
+{
+  < THIS > < DOT > < ID > < ASSIGN > valor() < SEMICOLON >
+}
+
+void valor():
+{ }
+{
+  (    < ID > | < INT > | < DOUBLE > | < BOOL >
+  )
+}
+
+void expresion():
+{}
+{
+  exp() < SEMICOLON >
+}
+
+void exp():
+{ }
+{
+  (    crearobj() | llamamet() | acceso() | variable()
+  )
+}
+
+void metodo():
+{}
+{
+  tipodato() < ID > < LPAREN > ( parametros() )? < RPAREN > metbloque()
+}
+
+void metbloque():
+{}
+{
+  < LBRACKET > < RETURN > crearobj() < SEMICOLON > < RBRACKET >
+}
+
+void crearobj():
+{}
+{
+  < NEW > < ID > < LPAREN > metpar() < RPAREN >
+}
+
+void metpar():
+{}
+{
+  exp() (< COMMA > exp() )?
+}
+
+void llamamet():
+{}
+{
+  < ID > < DOT > < ID > < LPAREN > metpar() < RPAREN >
+}
+
+void acceso():
+{}
+{
+  < THIS > < DOT > < ID >
+}
+
+void variable():
+{}
+{
+  < ID >
+}
