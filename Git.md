@@ -25,7 +25,7 @@ It is based on the videos and webpage of Jon Mircha.
 - [Clone](#clone)
 - [Branches Management](#branches-management)
 - [Merging Branches](#merging-branches)
-- [Changes in **Last Commit**](#changes-in-last-commit)
+- [Changes in Last Commit](#changes-in-last-commit)
 - [Historial](#historial)
 
 ---
@@ -596,3 +596,5 @@ Add changes to the last commit, only if it has **not been pushed**.
   ```git
   git diff
   ```
+
+---
