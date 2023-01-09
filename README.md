@@ -2,15 +2,16 @@
 
 This repository has tutorial of different tools that I have been learning in my Programming journey. It specially contains Data Science relationated aspects.
 
-The tutorial available are:
+The tutorials available are:
 
-- [Markdown](https://github.com/SantiGonzalezz/Tutorials/blob/main/Markdown.md)
-- [Numpy](https://github.com/SantiGonzalezz/Tutorials/blob/main/Numpy.ipynb)
-- [Pandas]()
-- [Matplotlib]()
-- [SQL in Python](https://github.com/SantiGonzalezz/Tutorials/blob/main/SQL%20in%20Python.ipynb)
-- [VBA](https://github.com/SantiGonzalezz/Tutorials/blob/main/VBA.md)
-- [Java](https://github.com/SantiGonzalezz/Tutorials/blob/main/Java.md)
+- [**Markdown**](https://github.com/SantiGonzalezz/Tutorials/blob/main/Markdown.md)
+- [**Git**](https://github.com/SantiGonzalezz/Tutorials/blob/main/Git.md)
+- [**VBA**](https://github.com/SantiGonzalezz/Tutorials/blob/main/VBA.md)
+- [**Java**](https://github.com/SantiGonzalezz/Tutorials/blob/main/Java.md)
+- [**Numpy**](https://github.com/SantiGonzalezz/Tutorials/blob/main/Numpy.ipynb)
+- [**Pandas**]()
+- [**Matplotlib**]()
+- [**SQL in Python**](https://github.com/SantiGonzalezz/Tutorials/blob/main/SQL%20in%20Python.ipynb)
 
 Mostly of the tutorials have coding, principally in Python, in consequence the Jupyter Notebooks are the preferred tool.
 
