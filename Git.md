@@ -23,6 +23,10 @@ It is based on the videos and webpage of Jon Mircha.
   - [Push](#push)
 - [Git Ignore](#git-ignore)
 - [Clone](#clone)
+- [Branches Management](#branches-management)
+- [Merging Branches](#merging-branches)
+- [Changes in **Last Commit**](#changes-in-last-commit)
+- [Historial](#historial)
 
 ---
 
@@ -57,35 +61,48 @@ git update-git-for-windows
 Configure Git with your account.
 
 - The name to be displayed
+
   ```git
   git config --global user.name "Your Name"
   ```
+
 - The email to attach
+
   ```git
   git config --global user.email youremail@xmail.com
   ```
+
 - Enable the UI of the Git Bash to be with colors
+
   ```git
   git config --global user.ui true
   ```
+
 - See your current configuration
+
   ```git
   git config --list
   ```
+
 - Standarize the New Lines for all OS in Windows
-  `git
-git config --global core.autocrlf true
-`
+
+  ```git
+  git config --global core.autocrlf true
+  ```
+
   <br>
   <br>
 
 Configure or change Git in Visual Studio Code
 
 - Set VS Code to be your editor
+
   ```git
   git config --global core.editor "code --wait"
   ```
+
 - Edit your Git settings in VS Code
+
   ```git
   git config --global -e
   ```
@@ -105,15 +122,19 @@ To get help on the Git commands
   ```
 
   - Help on the config command
+
     ```git
     git config -h
     ```
 
 - On the Browser
+
   ```git
   git help _command_
   ```
+
   - Help on the config command
+
     ```git
     git help config
     ```
@@ -143,6 +164,7 @@ To get help on the Git commands
   ```
 
   - Create a folder with name `GitPractice`
+
     ```git
     mkdir GitPractice
     ```
@@ -154,6 +176,7 @@ To get help on the Git commands
   ```
 
   - Go to the folder with name `GitPractice`
+
     ```git
     cd GitPractice/
     ```
@@ -180,6 +203,7 @@ To get help on the Git commands
     ```
 
   - Public and Private files/folders
+
     ```git
     ls -a
     ```
@@ -210,10 +234,13 @@ height="300">
 ### Stage
 
 - Add individual modfied files to _Staged_
+
   ```git
   git add _File/Folder_
   ```
+
 - Add all the modified files to _Staged_
+
   ```git
   git add .
   ```
@@ -221,10 +248,13 @@ height="300">
 ### Commit
 
 - Commit the changes in terminal
+
   ```git
   git commit -m "_Message of the commit_"
   ```
+
 - Commit the changes with VS Code. It will open a new tab in the editor where you add the message
+
   ```git
   git commit
   ```
@@ -287,10 +317,13 @@ To ignore some files to upload into the repository we use `.gitignore` file.
   ```
 
   - Ignore all `.exe` files
+
     ```gitignore
     *.exe
     ```
+
   - Ignore all ending `b.md` files
+
     ```gitignore
     *b.md
     ```
@@ -303,24 +336,32 @@ To ignore some files to upload into the repository we use `.gitignore` file.
   ```
 
   - Ignore all ending `.md` files except `important.md`
+
     ```gitignore
     *.md
     !important.md
     ```
 
 - Ignore files that containg something inside a folder but no in its subfolders.
+
   ```gitignore
   _foldername_/*_something_
   ```
+
   - Ignore all ending `.md` files in `doc` folder
+
     ```gitignore
     doc/*.md
     ```
+
 - Ignore files that containg something inside a folder and its subfolders.
+
   ```gitignore
   _foldername_/**/*_something_
   ```
+
   - Ignore all ending `.md` files in `doc` folder and its subfolders
+
     ```gitignore
     doc/**/*.md
     ```
@@ -339,7 +380,9 @@ git clone https://github.com/_username_/_repositoryName_.git
 
 ---
 
-## Branches
+## Branches Management
+
+[Index](#index)
 
 - **List** all the branches in the repo
 
@@ -379,12 +422,177 @@ git clone https://github.com/_username_/_repositoryName_.git
 
 - **Delete** a branch
 
-  ```git
-  git branch -d _branchName_
-  ```
+  - _Locally_
+
+    ```git
+    git branch -d _branchName_
+    ```
+
+  - _Remotely_
+
+    - ```git
+      git push origin --delete _branchName_
+      ```
+    - ```git
+      git push origin :_branchName_
+      ```
 
   - **Force Delete** a branch
 
     ```git
     git branch -D _branchName_
     ```
+
+- **Publish** a branch to the repository
+
+  ```git
+  git push -u origin _branchName_
+  ```
+
+---
+
+## Merging Branches
+
+[Index](#index)
+
+Two types:
+
+- Fast-Forward
+- Manual Merge
+
+<br>
+
+- Locate on the _main_ branch or the one that will contain the merged content
+
+```git
+git checkout _principalBranchName_
+```
+
+- Merge
+
+```git
+git merge _secondaryBranchName_
+```
+
+---
+
+## Changes in Last Commit
+
+[Index](#index)
+
+Add changes to the last commit, only if it has **not been pushed**.
+
+- Commit without changing the message of the commit been modified.
+
+  ```git
+  git commit --amend --no-edit
+  ```
+
+- Commit changing the message of the one being modified.
+
+  ```git
+  git commit --amend -m "_message_"
+  ```
+
+- Delete the last commit
+
+  ```git
+  git reset --hard HEAD~1
+  ```
+
+- Change to an specific past commit,
+
+  ```git
+  git checkout _commitId_
+  ```
+
+---
+
+## Historial
+
+[Index](#index)
+
+- Show all the **historial** of commits with all the information
+
+  ```git
+  git log
+  ```
+
+  ```git
+  q
+  ```
+
+- Show all the historial of commits in **one line**
+
+  ```git
+  git log --oneline
+  ```
+
+- Show **_n_ last** commits
+
+  ```git
+  git log -_n_
+  ```
+
+- **Filter** commits by date
+
+  - After
+
+    ```git
+    git log --after="2019-12-24 00:00:00"
+    ```
+
+  - Berfore
+
+    ```git
+    git log --before="2019-12-24 00:00:00"
+    ```
+
+  - Between
+
+    ```git
+    git log --after="2019-12-24 00:00:00" --before="2019-12-24 00:00:00"
+    ```
+
+- Register of all actions of the log.
+
+  ```git
+  git reflog
+  ```
+
+- Show the commits in a specific **format**
+
+  ```git
+  git log --pretty=format:"_format_"
+  ```
+
+  - `%h` - Short id
+  - `%H` - Long id
+  - `%s` - Message
+  - `%d` - Reference to branch name
+  - `%an` - Author name
+  - `%ad` - Authored Date
+
+    - Add
+
+      ```git
+      --date=short
+      ```
+
+      - Example
+
+        ```git
+        git log --pretty=format:"%ad %an %d %s %h" --date=short
+        ```
+
+- Show a **graph** of all **branches** and **commits**
+
+  ```git
+  git log --oneline --graph --all
+  ```
+
+- Get **difference** between **Working Directory** and **Staging**
+
+  ```git
+  git diff
+  ```
