@@ -26,7 +26,7 @@ It is based on the videos and webpage of Jon Mircha.
 - [Branches Management](#branches-management)
 - [Merging Branches](#merging-branches)
 - [Changes in Last Commit](#changes-in-last-commit)
-- [Historial](#historial)
+- [History](#history)
 
 ---
 
@@ -508,11 +508,11 @@ Add changes to the last commit, only if it has **not been pushed**.
 
 ---
 
-## Historial
+## History
 
 [Index](#index)
 
-- Show all the **historial** of commits with all the information
+- Show all the **history** of commits with all the information
 
   ```git
   git log
@@ -597,4 +597,31 @@ Add changes to the last commit, only if it has **not been pushed**.
   git diff
   ```
 
+- Save terminal output to a **file**
+
+  ```git
+  git _command_ > _filename_._fileExtension_
+  ```
+
+  - Save commits history
+
+    ```git
+    git log > commits.txt
+    ```
+
+  - Save graph
+
+    ```git
+    git log --oneline --graph --all > graph.txt
+    ```
+
 ---
+
+## Reset History
+
+[Index](#index)
+
+- Get the status of the repository and the **untracked** files
+  ```git
+  git status
+  ```
