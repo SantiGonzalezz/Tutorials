@@ -27,6 +27,12 @@ It is based on the videos and webpage of Jon Mircha.
 - [Merging Branches](#merging-branches)
 - [Changes in Last Commit](#changes-in-last-commit)
 - [History](#history)
+- [Reset History](#reset-history)
+- [Revert History](#revert-history)
+- [Tags](#tags)
+- [GitHub Pages](#github-pages)
+- [Remote](#remote)
+- [Colaboration in GitHub](#colaboration-in-github)
 
 ---
 
@@ -294,6 +300,8 @@ git pull
 ---
 
 ## Git Ignore
+
+[Index](#index)
 
 To ignore some files to upload into the repository we use `.gitignore` file.
 
@@ -621,7 +629,192 @@ Add changes to the last commit, only if it has **not been pushed**.
 
 [Index](#index)
 
-- Get the status of the repository and the **untracked** files
+- Get the status of the repository and the **untracked files**.
+
   ```git
   git status
   ```
+
+  <br>
+
+- **Soft**: The difference between the HEAD and the commit to reset from will be _Staged_
+
+  ```git
+  git reset --soft _commitId_
+  ```
+
+- **Mixed**: The difference between the HEAD and the commit to reset from will be _UnStaged_ or in Working Directory
+
+  ```git
+  git reset --mixed _commitId_
+  ```
+
+- **Hard**: The difference between the HEAD and the commit to reset from will be lost
+
+  ```git
+  git reset --hard _commitId_
+  ```
+
+  - Undo the _Staged_ and _Unstaged_ changes that have not been comitted
+
+    ```git
+    git reset --hard
+    ```
+
+---
+
+## Revert History
+
+[Index](#index)
+
+Create a new commit reverting the changes of a specific commit. It doesn't delete the history just creates a new commit.
+
+- Revert a specific commit
+
+  ```git
+  git revert _commitId_
+  ```
+
+---
+
+## Tags
+
+[Index](#index)
+
+To use in libraries or projects with many version as _1.2.3; 2.0.1_. they work as pointers to specific commits, you can not have two commits on the same tag.
+
+- List the current tags
+
+  ```git
+  git tag
+  ```
+
+- Create a new tag
+
+  ```git
+  git tag _tagName_
+
+    git tag v1.0.0
+  ```
+
+- Delete a tag
+
+  ```git
+  git tag -d _tagName_
+  ```
+
+- Process to upload remote repository
+
+  ```git
+  git add .
+  git tag v1.0.0
+  git commit -m "v1.0.0"
+  git push origin v1.0.0
+  ```
+
+---
+
+## GitHub Pages
+
+[Index](#index)
+
+Create and host a webpage directly in your GitHub repo.
+
+- Create the special branch
+
+  ```git
+  git branch gh-pages
+  git checkout gh-pages
+  <!--  -->
+  git checkout -b gh-pages
+  ```
+
+- Push the special branch to GitHub
+  ```git
+  git push origin gh-pages
+  ```
+  You may need to add the remote if you haven't do it already
+  ```git
+  git remote add origin https://github.com/_username_/_repositoryName_.git
+  git push origin gh-pages
+  ```
+
+---
+
+## Remote
+
+- Show the remote origins of the repo
+
+  ```git
+  git remote
+  ```
+
+- Show the remote origins of the repo with details
+
+  ```git
+  git remote -v
+  ```
+
+- Add a remote origin
+
+  ```git
+  git remote add _originName_ https://github.com/_username_/_repositoryName_.git
+  ```
+
+- Rename a remote origin
+
+  ```git
+  git remote rename _oldName_   _newName_
+  ```
+
+- Delete a remote origin
+
+  ```git
+  git remote remove _originName_
+  ```
+
+---
+
+## Colaboration in GitHub
+
+1. Fork the GitHub repository to your account
+
+1. Clone the forked repository
+
+   ```git
+   git clone https://github.com/_username_/_repositoryName_.git
+   ```
+
+1. Rename the origin remote names
+
+   ```git
+   git remote rename origin _newName_
+   ```
+
+1. Add the origin to the original repository
+
+   ```git
+   git remote add origin https://github.com/_username_/_repositoryName_.git
+   ```
+
+1. Create a new branch to make your colaboration and sync it with your repo
+
+   ```git
+   git checkout -b _newBranchName_
+   git push _fork_   _newBranchName_
+   ```
+
+1. Create a **Pull Request**
+
+   - Go to _Pull requests_ section in your GitHub repo
+   - Select _New Pull Request_
+   - Select the branches and repositories you are comparing
+   - _Create Pull Request_
+
+1. Accept a **Pull Request**
+
+   - Go to _Pull requests_ section
+   - Compare the changes and decide if you accept them or not
+   - _Merge pull request_
+
+1. Depurate useless branches
