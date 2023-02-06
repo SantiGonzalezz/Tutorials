@@ -743,6 +743,8 @@ Create and host a webpage directly in your GitHub repo.
 
 ## Remote
 
+[Index](#index)
+
 - Show the remote origins of the repo
 
   ```git
@@ -776,6 +778,8 @@ Create and host a webpage directly in your GitHub repo.
 ---
 
 ## Colaboration in GitHub
+
+[Index](#index)
 
 1. Fork the GitHub repository to your account
 
